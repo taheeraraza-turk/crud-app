@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  color: #fff;
+}
+
+.heading {
+  text-align: center;
+  color: white;
+  padding: 10px 0;
+  border-radius: 10px;
+  font-family:cursive;
+ font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.App {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 35px 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 550px;
+  animation: fadeIn 1s ease forwards;
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+input[type="text"] {
+  padding: 14px 16px;
+  font-size: 17px;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+input[type="text"]:focus {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 81, 47, 0.4);
+}
+
+ul {
+  margin-top: 30px;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 16px 20px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+li:hover {
+  transform: scale(1.01);
+}
+
+li button {
+  margin-left: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+li button:first-of-type {
+  background: #ffe600;
+  color: #111;
+}
+
+li button:last-of-type {
+  background: #ff4b5c;
+  color: #fff;
+}
+
+li button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .App {
+    padding: 25px 20px;
+  }
+
+  input[type="text"],
+  button {
+    font-size: 15px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  li button {
+    width: 100%;
+  }
+}
