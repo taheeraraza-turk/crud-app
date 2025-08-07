@@ -3,10 +3,16 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app= express();
 
-app.use(cors());
+app.use(cors(
+  {
+    origin:[],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+  }
+));
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/crudApp',{useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb+srv://taheerarazaturk:<db_password>@cluster0.8lsqg2z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',{useNewUrlParser: true, useUnifiedTopology: true})
 
 const Item = mongoose.model('Item', {name:String});
 
