@@ -8,23 +8,23 @@ function App() {
   const [editId, setEditId] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:3000/items').then(res => setItems(res.data)) .catch(err => console.error('GET error:', err));
+    axios.get('https://crud-app-phi-beige.vercel.app/items').then(res => setItems(res.data)) .catch(err => console.error('GET error:', err));
   }, []);
 
   function save(e) {
     e.preventDefault();
-    if (editId) {axios.put(`http://localhost:3000/items/${editId}`, { name: text }).then(() => reload());
+    if (editId) {axios.put(`https://crud-app-phi-beige.vercel.app/items/${editId}`, { name: text }).then(() => reload());
     } else {
-      axios.post('http://localhost:3000/items', { name: text }).then(() => reload());
+      axios.post('https://crud-app-phi-beige.vercel.app/items', { name: text }).then(() => reload());
     }
   }
 
   function del(id) {
-    axios.delete(`http://localhost:3000/items/${id}`).then(() => reload());
+    axios.delete(`https://crud-app-phi-beige.vercel.app/items/${id}`).then(() => reload());
   }
 
   function reload() {
-    axios.get('http://localhost:3000/items').then(res => {
+    axios.get('https://crud-app-phi-beige.vercel.app/items').then(res => {
       setItems(res.data);
       setText('');
       setEditId('');

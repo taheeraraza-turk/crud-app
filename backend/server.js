@@ -5,14 +5,14 @@ const app= express();
 
 app.use(cors(
   {
-    origin:[],
+    origin:["https://crud-app-51to.vercel.app"],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
   }
 ));
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://taheerarazaturk:<db_password>@cluster0.8lsqg2z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',{useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb+srv://taheerarazaturk:@75taheera_raza@cluster0.8lsqg2z.mongodb.net/',{useNewUrlParser: true, useUnifiedTopology: true})
 
 const Item = mongoose.model('Item', {name:String});
 
@@ -40,4 +40,4 @@ app.delete('/items/:id' , (req,res)=>{
     .then(() => res.json({ message: 'Item deleted successfully' }))
     .catch(err => res.status(400).json({ error: err.message }));
 })
-app.listen(3000, () => console.log('http://localhost:3000/items'));
+app.listen(3000, () => console.log('https://crud-app-phi-beige.vercel.app/items'));
